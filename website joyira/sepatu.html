@@ -1,0 +1,293 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sepatu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .nav-link {
+            color: black;
+        }
+        .nav-link:hover, .nav-link:focus {
+            color: blue;
+        }
+        .sub-nav-link {
+            color: rgba(0, 0, 0, 0.7);
+        }
+        .sub-nav-link:hover, .sub-nav-link:focus {
+            color: blue;
+        }
+        .active {
+            color: blue;
+        }
+        .hidden {
+            display: none;
+        }
+        .bookmarked {
+            color: blue;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white p-4 shadow-md flex items-center">
+        <div class="w-16 h-16">
+            <img alt="Company Logo" class="w-full h-full object-cover" src="/img/JOYIRA (2).png"/>
+        </div>
+        <div class="ml-4 relative flex-1">
+            <input class="w-full p-2 border border-gray-300 rounded" placeholder="Search bar" type="text"/>
+            <i class="fas fa-search absolute right-3 top-3 text-gray-500"></i>
+        </div>
+        <div class="ml-4 flex items-center">
+            <i id="bookmark-icon" class="fas fa-bookmark text-2xl text-gray-700 mr-4 cursor-pointer"></i>
+            <div class="relative">
+                <button class="bg-white border border-gray-300 p-2 rounded flex items-center">
+                    <span class="mr-2">Bahasa</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg hidden">
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">English</a>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Bahasa Indonesia</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="flex">
+        <nav class="w-36 p-4 shadow-md">
+            <ul>
+                <li class="mb-2"><a class="nav-link" href="beranda.html">Produk</a></li>
+                <li class="mb-2"><a class="nav-link" href="tentangkami.html">Tentang Kami</a></li>
+                <li class="mb-2"><a class="nav-link" href="komisi.html">Komisi</a></li>
+            </ul>
+            <div class="mt-4">
+                <h2 class="font-bold mb-2 text-black">Kategori</h2>
+                <ul>
+                    <li class="mb-2"><a class="sub-nav-link" href="AksesoriKepala.html">Aksesori Kepala</a></li>
+                    <li class="mb-2"><a class="sub-nav-link" href="rambut.html">Rambut</a></li>
+                    <li class="mb-2"><a class="sub-nav-link" href="makeup.html">Make Up</a></li>
+                    <li class="mb-2"><a class="sub-nav-link" href="aksesorisbadan.html">Aksesoris Badan</a></li>
+                    <li class="mb-2"><a class="sub-nav-link" href="baju.html">Baju</a></li>
+                    <li class="mb-2"><a class="sub-nav-link" href="#">Terusan</a></li>
+                    <li class="mb-2"><a class="sub-nav-link" href="#">Gaun</a></li>
+                    <li class="mb-2"><a class="sub-nav-link" href="celana.html">Celana</a></li>
+                    <li class="mb-2"><a class="sub-nav-link" href="rok.html">Rok</a></li>
+                    <li class="mb-2"><a class="sub-nav-link active" href="sepatu.html">Sepatu</a></li>
+                </ul>
+            </div>
+        </nav>
+        <main class="flex-1 p-4 overflow-y-auto h-screen">
+            <div id="product-description" class="grid grid-cols-3 gap-4">
+                <div class="bg-white p-4 shadow-md">
+                    <div class="w-full">
+                        <img src="/img/JOYIRA (2).png" alt="Produk 1">
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-gray-700">100 Robux</span>
+                        <div class="flex space-x-2">
+                            <i class="fas fa-link text-gray-700 cursor-pointer" onclick="redirectToLink('https://wa.me/6282180865408')"></i>
+                            <i class="fas fa-bookmark text-gray-700 cursor-pointer" onclick="toggleBookmark(this, 'Produk 1')"></i>
+                            <i class="fab fa-roblox text-gray-700"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-4 shadow-md">
+                    <div class="w-full">
+                        <img src="/img/JOYIRA (2).png" alt="Produk 2">
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-gray-700">200 Robux</span>
+                        <div class="flex space-x-2">
+                            <i class="fas fa-link text-gray-700 cursor-pointer" onclick="redirectToLink('#')"></i>
+                            <i class="fas fa-bookmark text-gray-700 cursor-pointer" onclick="toggleBookmark(this, 'Produk 2')"></i>
+                            <i class="fab fa-roblox text-gray-700"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-4 shadow-md">
+                    <div class="w-full">
+                        <img src="/img/JOYIRA (2).png" alt="Produk 3">
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-gray-700">300 Robux</span>
+                        <div class="flex space-x-2">
+                            <i class="fas fa-link text-gray-700 cursor-pointer" onclick="redirectToLink('#')"></i>
+                            <i class="fas fa-bookmark text-gray-700 cursor-pointer" onclick="toggleBookmark(this, 'Produk 3')"></i>
+                            <i class="fab fa-roblox text-gray-700"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-4 shadow-md">
+                    <div class="w-full">
+                        <img src="/img/JOYIRA (2).png" alt="Produk 4">
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-gray-700">300 Robux</span>
+                        <div class="flex space-x-2">
+                            <i class="fas fa-link text-gray-700 cursor-pointer" onclick="redirectToLink('#')"></i>
+                            <i class="fas fa-bookmark text-gray-700 cursor-pointer" onclick="toggleBookmark(this, 'Produk 4')"></i>
+                            <i class="fab fa-roblox text-gray-700"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-4 shadow-md">
+                    <div class="w-full">
+                        <img src="/img/JOYIRA (2).png" alt="Produk 5">
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-gray-700">300 Robux</span>
+                        <div class="flex space-x-2">
+                            <i class="fas fa-link text-gray-700 cursor-pointer" onclick="redirectToLink('#')"></i>
+                            <i class="fas fa-bookmark text-gray-700 cursor-pointer" onclick="toggleBookmark(this, 'Produk 5')"></i>
+                            <i class="fab fa-roblox text-gray-700"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-4 shadow-md">
+                    <div class="w-full">
+                        <img src="/img/JOYIRA (2).png" alt="Produk 6">
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-gray-700">300 Robux</span>
+                        <div class="flex space-x-2">
+                            <i class="fas fa-link text-gray-700 cursor-pointer" onclick="redirectToLink('#')"></i>
+                            <i class="fas fa-bookmark text-gray-700 cursor-pointer" onclick="toggleBookmark(this, 'Produk 6')"></i>
+                            <i class="fab fa-roblox text-gray-700"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-4 shadow-md">
+                    <div class="w-full">
+                        <img src="/img/JOYIRA (2).png" alt="Produk 7">
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-gray-700">300 Robux</span>
+                        <div class="flex space-x-2">
+                            <i class="fas fa-link text-gray-700 cursor-pointer" onclick="redirectToLink('#')"></i>
+                            <i class="fas fa-bookmark text-gray-700 cursor-pointer" onclick="toggleBookmark(this, 'Produk 7')"></i>
+                            <i class="fab fa-roblox text-gray-700"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-4 shadow-md">
+                    <div class="w-full">
+                        <img src="/img/JOYIRA (2).png" alt="Produk 7">
+                    </div>
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-gray-700">300 Robux</span>
+                        <div class="flex space-x-2">
+                            <i class="fas fa-link text-gray-700 cursor-pointer" onclick="redirectToLink('#')"></i>
+                            <i class="fas fa-bookmark text-gray-700 cursor-pointer" onclick="toggleBookmark(this, 'Produk 7')"></i>
+                            <i class="fab fa-roblox text-gray-700"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- tambah display produk diatas yy -->
+            </div>
+
+            <!-- ini untuk ngeliat produk yang di bookmark-->
+            <div id="bookmarked-products" class="hidden">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold">Produk yang di simpan</h2>
+                    <i id="close-bookmark" class="fas fa-times text-2xl text-gray-700 cursor-pointer"></i>
+                </div>
+                <div class="grid grid-cols-3 gap-4" id="bookmarked-products-list">
+                    <!-- Bookmarked products will be added here dynamically -->
+                </div>
+            </div>
+        </main>
+        <aside class="bg-white w-36 p-4 shadow-md h-screen overflow-y-auto">
+            <div class="mb-4">
+                <div class="w-full"></div>
+                <img src="/img/JOYIRA (2).png" alt="">
+            </div>
+            <div class="mb-4">
+                <div class="w-full"></div>
+                <img src="/img/JOYIRA (2).png" alt="">
+            </div>
+            <div class="mb-4">
+                <div class="w-full"></div>
+                <img src="/img/JOYIRA (2).png" alt="">
+            </div>
+            <div class="mb-4">
+                <div class="w-full"></div>
+                <img src="/img/JOYIRA (2).png" alt="">
+            </div>
+            <div class="mb-4">
+                <div class="w-full"></div>
+                <img src="/img/JOYIRA (2).png" alt="">
+            </div>
+            <div class="mb-4">
+                <div class="w-full"></div>
+                <img src="/img/JOYIRA (2).png" alt="">
+            </div>
+            <div class="mb-4">
+                <div class="w-full"></div>
+                <img src="/img/JOYIRA (2).png" alt="">
+            </div>
+        </aside>
+    </div>
+    <footer class="bg-white p-4 shadow-md flex justify-around mt-4">
+        <a class="text-blue-500" href="https://www.instagram.com/itsjoyira/profilecard/?igsh=YXMzbHNmYTB2ZzN6">Instagram</a>
+        <a class="text-blue-500" href="https://www.tiktok.com/@itsjoyira?_t=8reUGMOol0b&_r=1">Tiktok</a>
+        <a class="text-blue-500" href="https://wa.me/6282180865408">Whatsapp</a>
+        <a class="text-blue-500" href="https://www.roblox.com/groups/35016558/Joyira-Fashion-Store#!/about">Grup di Roblox</a>
+    </footer>
+    <script>
+        const bookmarkedProducts = [];
+
+        function toggleBookmark(element, productName) {
+            element.classList.toggle('bookmarked');
+            if (element.classList.contains('bookmarked')) {
+                element.style.color = 'blue';
+                bookmarkedProducts.push(productName);
+                addBookmarkedProduct(productName);
+            } else {
+                element.style.color = 'gray';
+                const index = bookmarkedProducts.indexOf(productName);
+                if (index > -1) {
+                    bookmarkedProducts.splice(index, 1);
+                    removeBookmarkedProduct(productName);
+                }
+            }
+        }
+
+        function addBookmarkedProduct(productName) {
+            const productElement = document.createElement('div');
+            productElement.classList.add('bg-white', 'p-4', 'shadow-md');
+            productElement.innerHTML = `
+                <div class="w-full h-24 bg-gray-300"></div>
+                <p class="text-center mt-2">${productName}</p>
+            `;
+            document.getElementById('bookmarked-products-list').appendChild(productElement);
+        }
+
+        function removeBookmarkedProduct(productName) {
+            const productElements = document.getElementById('bookmarked-products-list').children;
+            for (let i = 0; i < productElements.length; i++) {
+                if (productElements[i].querySelector('p').innerText === productName) {
+                    productElements[i].remove();
+                    break;
+                }
+            }
+        }
+
+        function redirectToLink(url) {
+            window.location.href = url;
+        }
+
+        document.getElementById('bookmark-icon').addEventListener('click', function() {
+            document.getElementById('product-description').classList.add('hidden');
+            document.getElementById('bookmarked-products').classList.remove('hidden');
+        });
+
+        document.getElementById('close-bookmark').addEventListener('click', function() {
+            document.getElementById('product-description').classList.remove('hidden');
+            document.getElementById('bookmarked-products').classList.add('hidden');
+        });
+
+        document.querySelector('button').addEventListener('click', function() {
+            this.nextElementSibling.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
